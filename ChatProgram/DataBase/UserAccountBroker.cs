@@ -4,7 +4,7 @@ using System.Data;
 namespace DataBase
 {
     public class UserAccountBroker
-    {
+    {/*
         private ConnectionProvider connectionProvider;
        public UserAccountBroker(ConnectionProvider connectionProvider)
         {
@@ -15,6 +15,7 @@ namespace DataBase
         {
             using (IDbConnection connection = connectionProvider.GetConnection())
            {
+                
                 using (IDbCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "SELECT * FROM useraccount WHERE useraccount_username = ?username AND useraccount_password = ?password";
@@ -39,6 +40,6 @@ namespace DataBase
                     }
                 }
             } 
-        }
+        }*/
     }
 }

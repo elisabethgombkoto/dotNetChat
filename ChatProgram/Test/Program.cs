@@ -14,10 +14,14 @@ namespace Test
         {
             try
             {
+                DapperConfiguration.Initialize();
                 ConnectionProvider provider = new ConnectionProvider();
-                UserAccountBroker userDataBroker = new UserAccountBroker(provider);
-                UserAccount user = userDataBroker.GetUserAccount("florian", "pwd");
+                UserAccountDapper dapper = new UserAccountDapper();
 
+                // UserAccountBroker userDataBroker = new UserAccountBroker(provider);
+                //UserAccount user = userDataBroker.GetUserAccount("florian", "pwd");
+                UserAccount user = null;
+                user = dapper.GetUserAccount(provider.GetConnection(), "florian", "pwd");
                 if (user != null)
                 {
                     Console.WriteLine(user.Firstname);
