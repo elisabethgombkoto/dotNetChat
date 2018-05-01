@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace ChatUserInterface
 {
-    public class Message
+    public class MessageUI
     {
         private int chatMessageID;
         public int ChatMessageID
@@ -35,6 +35,5 @@ namespace Model
             get { return messageTimeStamp; }
             set { messageTimeStamp = value; }
         }
-
     }
 }

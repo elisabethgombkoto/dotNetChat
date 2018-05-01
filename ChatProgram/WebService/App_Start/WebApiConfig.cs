@@ -16,10 +16,10 @@ namespace WebService
             DapperConfiguration.Initialize();
             // Web-API-Routen
             config.MapHttpAttributeRoutes();
-
+            //routeTemplate: "api/{controller}/{id}",
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 

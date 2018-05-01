@@ -21,7 +21,8 @@ namespace DataBase
             {
                 config.AddMap(new UserAccountMapper());
                 config.AddMap(new ChatMapper());
-                config.AddMap(new ChatMemberMapper());
+                config.AddMap(new MessageMapper());
+                
             });
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataBase.dappers
 {
-    //useraccountDapper usw...
+    
     public class UserAccountDapper
     {
 
@@ -27,6 +27,12 @@ namespace DataBase.dappers
             "SELECT * FROM useraccount").ToList();
         }
 
+        public IEnumerable<UserAccount> GetAllContact(IDbConnection connection, int userID)
+        {
+            
+            return connection.Query<UserAccount>(
+                "SELECT * FROM fhv_chat.contact_lists cl JOIN  useraccount uc ON cl.contact_lists_useraccount_id = uc.useraccount_id WHERE contact_lists_useraccount_owner = @ID",new { ID = userID }).ToList();
+        }
 
     }
 }

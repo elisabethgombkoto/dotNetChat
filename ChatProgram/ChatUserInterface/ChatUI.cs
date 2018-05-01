@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace ChatUserInterface
 {
-    public class Chat
+    public class ChatUI
     {
         private int chatID;
         public int ChatID
@@ -21,6 +21,5 @@ namespace Model
             get { return chatTitel; }
             set { chatTitel = value; }
         }
-        
     }
 }

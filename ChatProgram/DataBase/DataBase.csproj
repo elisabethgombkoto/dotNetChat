@@ -61,12 +61,11 @@
     <Compile Include="ConnectionProvider.cs" />
     <Compile Include="DapperConfiguration.cs" />
     <Compile Include="dappers\ChatDapper.cs" />
-    <Compile Include="dappers\ChatMemberDapper.cs" />
     <Compile Include="dappers\UserAccountDapper.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="mappers\ChatMapper.cs" />
+    <Compile Include="mappers\MessageMapper.cs" />
     <Compile Include="mappers\UserAccountMapper.cs" />
-    <Compile Include="UserAccountBroker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

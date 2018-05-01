@@ -1,4 +1,5 @@
 ﻿using DataBase;
+using DataBase.dappers;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,10 @@ namespace Test
                 // UserAccountBroker userDataBroker = new UserAccountBroker(provider);
                 //UserAccount user = userDataBroker.GetUserAccount("florian", "pwd");
                 UserAccount user = null;
+                IEnumerable<UserAccount> accounts = dapper.GetAllContact(provider.GetConnection(), 1);
+
                 user = dapper.GetUserAccount(provider.GetConnection(), "florian", "pwd");
+               
                 if (user != null)
                 {
                     Console.WriteLine(user.Firstname);

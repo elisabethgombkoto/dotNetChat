@@ -14,7 +14,6 @@ namespace DataBase.mappers
         {
             Map(x => x.ChatID).ToColumn("chat_id");
             Map(x => x.ChatTitel).ToColumn("chat_titel");
-            Map(x => x.ChatHost).ToColumn("chat_host");
         }
     }
 }
