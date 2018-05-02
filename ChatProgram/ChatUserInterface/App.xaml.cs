@@ -13,5 +13,6 @@ namespace ChatUserInterface
     /// </summary>
     public partial class App : Application
     {
+        public UserAccountUI CurrentUser { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace WebService
 
         public IEnumerable<Chat> GetAllChats(int userID)
         {
-            
+            //using _dbConnection = _cp.GetConnection();
             IEnumerable<Chat> chats = _chatDapper.GetAllChats(_dbConnection, userID);
             if(chats != null && chats.Any())
             {

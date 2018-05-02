@@ -13,10 +13,13 @@ namespace ChatUserInterface
         
         public RestSharp()
         {
+            //TIDI kein Singleton verwenden, diese Klassen im Bereich der Kommunikation sind sehr kurzlebig
             _client = RestSharpClient.Instance.Client;
         }
+
         public IEnumerable<ChatUI> GetChatsFromUser(int userID)
         {
+            //client = new RestClient()
             var request = new RestRequest("http://localhost:13555/api/Chat/Chats", Method.POST);
             request.AddParameter("userID", "userID");
             IEnumerable<ChatUI> chats = new List<ChatUI>();
@@ -79,14 +82,14 @@ namespace ChatUserInterface
         //RestClient must be a singelton, set Cookie
         public UserAccountUI LogIn(string username, string password)
         {
-            
+            // die Object in Vmodel wenn die ´Methode aufgerufen wird dann in property im App merken
             var request = new RestRequest("http://localhost:13555/api/User/Login", Method.POST);
             //request.RequestFormat = DataFormat.Json;
             UserInfo userInfo = new UserInfo(username, password);
             request.AddBody(userInfo);
             UserAccountUI user = null;
-            var asyncHandler = _client.ExecuteAsync(request, r =>
-            {
+            //view model sollte asynch handeln new thread machen
+            var r = _client.Execute(request); 
                 if (r.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     try
@@ -106,7 +109,6 @@ namespace ChatUserInterface
                     throw new Exception(exception);
                 }
 
-            });
             return user;
         }
 
@@ -149,5 +151,5 @@ namespace ChatUserInterface
     //            throw new Exception(e.Message);
     //        }
     //    }
-    //}
+    }
 }
